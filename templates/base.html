@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <img src="{% static 'img/logo.png' %}" alt="">
+    <h1>Системный администратор</h1>
+</header>
+
+<main>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">О профессии</a>
+            </li>
+            <li>
+                <a href="{% url 'relevance' %}">Востребованность</a>
+            </li>
+            <li>
+                <a href="{% url 'geo' %}">География</a>
+            </li>
+            <li>
+                <a href="{% url 'skills' %}"><span>Навыки</span></a>
+            </li>
+            <li>
+                <a href="{% url 'vacancies' %}"><span>Последние вакансии</span></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="main">
+        {% block main %}
+        {% endblock %}
+    </div>
+</main>
+
+
+<footer>
+    <span>Васикова Вилера</span>
+    <span>РИ-210934</span>
+</footer>
+</body>
+</html>
